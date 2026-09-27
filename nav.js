@@ -38,6 +38,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 "../../" +
                 savedIcon.replace("../", "");
 
+        } else if (
+            pagePath.endsWith("/index.html") ||
+            pagePath.endsWith("/")
+        ) {
+
+            iconPath =
+                savedIcon.replace("../", "");
+
         }
 
         navbarProfile.innerHTML =
