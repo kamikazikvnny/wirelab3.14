@@ -19,24 +19,17 @@ document.addEventListener("DOMContentLoaded", function () {
         let iconPath = savedIcon;
 
         /*
-           Accounts saves the icon as:
-           ../z-images/profile-icons/icon-01.png
-
-           Adjust the path based on the current page depth.
+           Convert the Accounts path into a
+           path that works from any WireLab page.
         */
 
-        const pagePath =
-            window.location.pathname;
-
-        if (
-            pagePath.includes("/tools/color-wheel/") ||
-            pagePath.includes("/study/units/") ||
-            pagePath.includes("/labs/gfci-test-lab/")
-        ) {
+        if (savedIcon.startsWith("../z-images/")) {
 
             iconPath =
-                "../../" +
-                savedIcon.replace("../", "");
+                savedIcon.replace(
+                    "../z-images/",
+                    "/z-images/"
+                );
 
         }
 
